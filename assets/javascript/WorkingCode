@@ -1,5 +1,3 @@
-
-//Global Variables
 var time = 0;
 
 var interval = 0;
@@ -9,86 +7,7 @@ var correctAnswer = "";
 var wrongAmount = 0;
 
 var rightAmount = 0;
-
 var wordIndex = 0;
-
-
-
-
-//an array of question onjects
-var questions = [
-
-		{
-		"question": "In the TV show Rugrats, who is Angelica to Tommy?",
-		"answer": "first cousin",
-		"wrongAnswer1" : "best friend",
-		"wrongAnswer2" : "younger sister"
-
-		},
-
-		{
-		"question" : "What is a 'Wonderball?",
-		"answer": "Chocolate Candy in the shape of a ball, filled with treats",
-		"wrongAnswer1" : "A pretend phsychic ball that glowed when you wave your hand over it",
-		"wrongAnswer2": "A ball that lit up with different colors"
-		},
-
-		{
-		"question": "Will, the Fresh-Prince, spent most of his days _______ before moving to Bel Air",
-		"answer": "On the playground in West Philadelphia",
-		"wrongAnswer1" : "In the barbershop in West Philadelphia",
-		"wrongAnswer2": "In the hood of West Philadelphia"
-		},
-
-		{
-		"question": "Who is the main character of the Cartoon, the Wild Thornberries",
-		"answer": "Eliza Thornberry",
-		"wrongAnswer1": "Kara Thornberry",
-		"wrongAnswer2": "Dippity Thornberry"
-		},
-
-		{
-		"question": "'I Don't Want No' ______, are lyrics from hit song in the 90s by TLC.",
-		"answer": "Scrub",
-		"wrongAnswer1" : "Scab",
-		"wrongAnswer2" : "Sponge"
-		}, 
-
-		{"question": "'Who does Arnold have a crush on, in 'Hey Arnold'?",
-		"answer": "Lila Sawyer",
-		"wrongAnswer1" : "Helga Pitaki",
-		"wrongAnswer2": "Phoebe Heyerdahl"
-		},
-
-		{
-		"question": "'What was the highest grossing film in the 90s'?",
-		"answer": "Titanic",
-		"wrongAnswer1" : "The Lion King",
-		"wrongAnswer2": "Forrest Gump"
-		},
-
-		{
-		"question": "'How many championships did the Chicago Bulls win in the 90s'?",
-		"answer": "6",
-		"wrongAnswer1": "4",
-		"wrongAnswer2": "8"
-		},
-
-		{
-		"question": "'Who was president in 1992'?",
-		"answer": "George H W Bush",
-		"wrongAnswer1": "Bill Clinton",
-		"wrongAnswer2": "Theodore Roosevelt"
-		},
-
-		{
-		"question": "Finish the lyrics: 'You are my fire____?",
-		"answer": "...the one desire",
-		"wrongAnswer1": "...the one required",
-		"wrongAnswer2": "...with nice attire"
-		}
-
-];
 
 
 
@@ -117,65 +36,195 @@ function timeConverter (t) {
 
 
 
-//array of already asked questions (not fully working)
-var alreadyAsked = [];
+var questions = [
+
+{
+"question": "In the TV show Rugrats, who is Angelica to Tommy?",
+"answer": "first cousin",
+"wrongAnswer1" : "best friend",
+"wrongAnswer2" : "younger sister"
+
+},
+
+{
+"question" : "What is a 'Wonderball?",
+"answer": "Chocolate Candy in the shape of a ball, filled with treats",
+"wrongAnswer1" : "A pretend phsychic ball that glowed when you wave your hand over it",
+"wrongAnswer2": "A ball that lit up with different colors"
+},
+
+{
+"question": "Will, the Fresh-Prince, spent most of his days _______ before moving to Bel Air",
+"answer": "On the playground in West Philadelphia",
+"wrongAnswer1" : "In the barbershop in West Philadelphia",
+"wrongAnswer2": "In the hood of West Philadelphia"
+},
+
+{
+"question": "Who is the main character of the Cartoon, the Wild Thornberries",
+"answer": "Eliza Thornberry",
+"wrongAnswer1": "Kara Thornberry",
+"wrongAnswer2": "Dippity Thornberry"
+},
+
+{
+"question": "'I Don't Want No' ______, are lyrics from hit song in the 90s by TLC.",
+"answer": "Scrub",
+"wrongAnswer1" : "Scab",
+"wrongAnswer2" : "Sponge"
+}, 
+
+{"question": "'Who does Arnold have a crush on, in 'Hey Arnold'?",
+"answer": "Lila Sawyer",
+"wrongAnswer1" : "Helga Pitaki",
+"wrongAnswer2": "Phoebe Heyerdahl"
+},
+
+{
+"question": "'What was the highest grossing film in the 90s'?",
+"answer": "Titanic",
+"wrongAnswer1" : "The Lion King",
+"wrongAnswer2": "Forrest Gump"
+},
+
+{
+"question": "'How many championships did the Chicago Bulls win in the 90s'?",
+"answer": "6",
+"wrongAnswer1": "4",
+"wrongAnswer2": "8"
+},
+
+{
+"question": "'Who was president in 1992'?",
+"answer": "George H W Bush",
+"wrongAnswer1": "Bill Clinton",
+"wrongAnswer2": "Theodore Roosevelt"
+},
+
+{
+"question": "Finish the lyrics: 'You are my fire____?",
+"answer": "...the one desire",
+"wrongAnswer1": "...the one required",
+"wrongAnswer2": "...with nice attire"
+}
+
+];
+
+
+// var wrongAnswers = [
+// {
+// "WrongAnswer1" : "best friend",
+// "WrongAnswer2" : "younger sister"
+// },
+
+
+// {
+// "WrongAnswer1" : "A pretend phsychic ball that glowed when you wave your hand over it",
+// "WrongAnswer2": "A ball that lit up with different colors"
+// },
+
+// {
+// "WrongAnswer1" : "In the barbershop in West Philadelphia",
+// "WrongAnswer2": "In the hood of West Philadelphia"
+// },
+
+// {
+// "WrongAnswer1": "Kara Thornberry",
+// "WrongAnswer2": "Dippity Thornberry"
+// },
+
+// {
+// "WrongAnswer1" : "Scab",
+// "WrongAnswer2" : "Sponge"
+// }, 
+
+// {
+// "WrongAnswer1" : "Helga Pitaki",
+// "WrongAnswer2": "Phoebe Heyerdahl"
+// },
+// {
+// "WrongAnswer1" : "The Lion King",
+// "WrongAnswer2": "Forrest Gump"
+// },
+
+// {
+// "WrongAnswer1": "4",
+// "WrongAnswer2": "8"
+// },
+
+// {
+// "WrongAnswer1": "Bill Clinton",
+// "WrongAnswer2": "Theodore Roosevelt"
+// }, 
+
+// {
+// "WrongAnswer1": "...the one required",
+// "WrongAnswer2": "...with nice attire"
+// }
+
+// ];
+
+
+ var alreadyAsked = [];
 
 //start game
 createStartButton();
 
 
 
-//reset function
+
 function reset(){
 
- 
+		for (var i = 0; i<questions.length; i++){
+			console.log(questions[i].question);
 
 		//computer randomly generated question.
-		var computerGuess = questions[Math.floor(Math.random() * questions.length)];
-
-
+		var computerGuess = questions[i].question;
 
 		var alreadyAskedIndex = alreadyAsked.indexOf(computerGuess);
 
-
-		//if question wasn't already asked (this doesn't work yet -- incomplete)
 		if(alreadyAskedIndex < 0){
 
-				//add question to already asked array
-				alreadyAsked.push(computerGuess.question);
-				
 
-				restartTime();
+		alreadyAsked.push(computerGuess.question);
+		
+		
 
+		restartTime();
 
-
-				//display randomly guessed question
-				$("#question").html(computerGuess.question);
-
-
-
-				//find the matching wrong choices by using the index of the question
-				var matchIndex = questions.indexOf(computerGuess);
-
-
-				//create array to store list of choices (answer & wrongAnswers)
-				var mixedChoices = [];
-
-				//store list of choices (answer & wrongAnswers)
-				mixedChoices.push(computerGuess.answer);
-				mixedChoices.push(computerGuess.wrongAnswer1);
-				mixedChoices.push(computerGuess.wrongAnswer2);
-
-
-				//clear answers element
-				$("#answers").html("");
+		console.log("wrong amount" + wrongAmount);
+		console.log("right amount" + rightAmount);
 
 
 
-				//call CheckDisplay function to display choices that aren't already displayed
-				checkDisplayAnswers();
-				
-				
+
+		//display randomly guessed question
+		$("#question").html(computerGuess.question);
+
+
+
+		//find the matching wrong choices by using the index of the question
+		var matchIndex = questions.indexOf(computerGuess);
+
+
+		//create array to store list of choices (answer & wrongAnswers)
+		var mixedChoices = [];
+
+		//store list of choices (answer & wrongAnswers)
+		mixedChoices.push(computerGuess.answer);
+		mixedChoices.push(computerGuess.wrongAnswer1);
+		mixedChoices.push(computerGuess.wrongAnswer2);
+
+
+		//clear answers element
+		$("#answers").html("");
+
+
+
+		//call CheckDisplay function to display choices that aren't already displayed
+		checkDisplayAnswers();
+		
+}		
 
 }
 
@@ -231,43 +280,39 @@ function reset(){
 			
 			  
 			function checkAnswer(){
-
-					//assign the checked/unchecked status of the right answer to a variable
 					var status = $("#rightAnswer").prop('checked');
 				  
-				    rightCheck();
+				     rightCheck();
 
 				   	var wrongStatus;
 
-				   	//assign the checked/unchecked status of the wrong answers to a variable
+
 				      $( ".wrongAnswer").each(function() {
 				      	
-				      	//if at least one is checked, set the status to true
  					 	 var isWrong = $( this ).prop( 'checked' );
  					 	if(isWrong === true){
  					 		wrongStatus = true;
  					 	}
 					 });
 
+				     //console.log(wrongStatus);
 				     wrongCheck();
 				
 
 				function rightCheck(){
-					//if radio button of right answer is checked
 					if(status === true){
-						//display "That's right"
 						$("#question").html("That's right!");
 						$("#answers").html("<br>");
+						rightAmount++;
 						
+
 				 		nextButton();
 
 
 					}
 				}
 				function wrongCheck(){
-					//if radio button of wrong answer is checked
 					if(wrongStatus === true){
-						//display "message and the correct answer
 						$("#question").html("That's Wrong! The Answer is...");
 						$("#answers").html("<br>" + computerGuess.answer);
 					
@@ -284,7 +329,6 @@ function reset(){
 	
 
 			function count(){
-			//decrement the time (in seconds)
 			time --;
 		
 			checkAnswer();
@@ -352,7 +396,7 @@ function reset(){
 		          var newbtn = $("<button>");
 		          // Adding a class of movie to our button
 		          newbtn.addClass("start");
-		          // Adding a data-name
+		          // Adding a data-attribute
 		          newbtn.attr("data-name", "start");
 		          newbtn.attr("id", "start");
 		          // Providing the initial button text
@@ -362,7 +406,7 @@ function reset(){
 		          $("#answers").html("<br>");
 		          $("#answers").html(newbtn);
 
-		          // Adding a click event listener to all elements with a class of "start"
+		          // Adding a click event listener to all elements with a class of "movie"
       			  $(document).on("click", ".start", displayStartButton);
 
 
@@ -377,40 +421,37 @@ function reset(){
 
          function timerDiv(){
 
-         	// This code $("<div>") is all jQuery needs to create the beginning and end tag. 
-		          var newdiv = $("<div>");
+         	// This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+		          var newbtn = $("<div>");
 		          // Adding a class of movie to our button
-		          newdiv.addClass("timer");
+		          newbtn.addClass("timer");
 		          // Adding a data-attribute
-		          newdiv.attr("data-name", "timer");
-		          newdiv.attr("id", "timerDiv");
+		          newbtn.attr("data-name", "timer");
+		          newbtn.attr("id", "timerDiv");
 		         
-		          // add new div to game body
-		          $("#gameBody").append(newdiv);
+		          // Adding the button to the buttons-view div
+		          $("#gameBody").append(newbtn);
 		          timerPara();
 
 
          }
 
          function timerPara(){
-         	// 
-         			//create new paragraph
-		          var newp = $("<p>");
-		          // Adding a class of paragraph
-		          newp.addClass("timer");
+         	// This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+		          var newbtn = $("<p>");
+		          // Adding a class of movie to our button
+		          newbtn.addClass("timer");
 		          // Adding a data-attribute
-		          newp.attr("data-name", "timer");
-		          newp.attr("id", "timer");
+		          newbtn.attr("data-name", "timer");
+		          newbtn.attr("id", "timer");
 		         
-		          // Adding the paragraph to the timer div
-		          $("#timerDiv").append(newp);
+		          // Adding the button to the buttons-view div
+		          $("#timerDiv").append(newbtn);
 
 
 
 
          }
-
-         //this function is not fully functioning yet
 
          function endGame(){
          	var total = rightAmount + wrongAmount;

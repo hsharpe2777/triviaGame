@@ -1,4 +1,4 @@
-body{
+#gameBody{
 
 	background-image: url('../../assets/images/90sBackground.png');
 	size: auto;
@@ -43,7 +43,7 @@ body{
  height: 330px;
  position: absolute;
  left: 560px;
- top: 240px;
+ top: 160px;
  size: auto;
  border-radius: 10%;
 
@@ -60,7 +60,7 @@ body{
  	height: 80px;
  	position: relative;
  	left: 740px;
- 	bottom: 340px;
+ 	bottom: 980px;
    
 
 }
@@ -82,5 +82,25 @@ padding-left: 35px;
 	text-shadow: 1px 1px #9ec4e8;
     
  
+}
+
+#start{
+	font-size: 80px;
+	font-weight: bold;
+	color: #4fdfe3;
+	text-shadow: 3px 2px #9ec4e8;
+	padding-left: 10px;
+	text-align: center;
+	margin-top: 50px;
+	margin-left: 40px;
+	background-color: #fff;
+	font-style: italic;
+	padding-right: 20px;
+	border-color: #FF49B1;
+	border-width: 5px;
+
+
+
+
 
 }
