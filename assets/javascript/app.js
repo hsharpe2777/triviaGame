@@ -174,10 +174,8 @@ function reset(){
 
 				//call CheckDisplay function to display choices that aren't already displayed
 				checkDisplayAnswers();
-				
-				
-
-}
+								
+	}
 
 
 
@@ -225,8 +223,8 @@ function reset(){
 								      }
 
 								}
-							}
-				}
+					}
+			}
 
 			
 			  
@@ -264,9 +262,10 @@ function reset(){
 
 					}
 				}
-				function wrongCheck(){
-					//if radio button of wrong answer is checked
-					if(wrongStatus === true){
+			
+			function wrongCheck(){
+				//if radio button of wrong answer is checked
+				if(wrongStatus === true){
 						//display "message and the correct answer
 						$("#question").html("That's Wrong! The Answer is...");
 						$("#answers").html("<br>" + computerGuess.answer);
@@ -278,8 +277,8 @@ function reset(){
 
 					}
 
-}
-};
+				}
+			};
 			
 	
 
@@ -321,8 +320,8 @@ function reset(){
 
 				 //set the "timer" div to "00:10."
 
-				    $("#timer").html("00:05");
-				    interval = setInterval(count, 1000);
+				$("#timer").html("00:05");
+				interval = setInterval(count, 1000);
 
 				  }
 
@@ -410,8 +409,8 @@ function reset(){
 
          }
 
+         
          //this function is not fully functioning yet
-
          function endGame(){
          	var total = rightAmount + wrongAmount;
 
